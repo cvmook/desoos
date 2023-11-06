@@ -1,0 +1,63 @@
+body{
+    background-color: #E7E7DF;
+}
+
+/****** ALGEMENE HEADER STYLING ******/
+
+#curvy-header-line{
+    position: fixed;
+    top:100px;
+    height: 100%;
+    width: 100%;
+}
+
+.bird-animation {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: birds;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+#bird-position{
+    margin-left: 50px;
+    
+}
+
+@keyframes birds {
+  0%   { left:0px; top:0px;}
+  25%  { left:0px; top:10px;}
+  50%  { left:0px; top:25px;}
+  75%  { left:0px; top:15px;}
+  100% { left:0px; top:0px;}
+}
+
+.box1{
+    width: 649px;
+    height: 181px;
+    background-color: #F1DCBF;
+
+    
+
+}
+
+.box2{
+    width: 438px;
+    height: 122px;
+    background-color: #FF5B35;
+}
+
+#h1-blauw{
+    color: #39BBD1;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    text-align: center;
+}
+
+#h1-oranje{
+    color: #F1DCBF;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+}
