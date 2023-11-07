@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,8 +13,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-      <div class="box1"> <h1 id="h1-blauw">WIJ HETEN U WELKOM BIJ</h1> </div>
-      <div class="box2"> <h1 id="h1-oranje">DE JEUGD SOOS</h1> </div>
+      <div class="box1"> <h1 id="header-blauw">WIJ HETEN U WELKOM BIJ</h1> </div>
+      <div class="box2"> <h1 id="header-oranje">DE JEUGD SOOS</h1> </div>
     </div>
     <div class="col">
         <div class="bird-animation" id="bird-position">

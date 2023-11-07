@@ -49,20 +49,18 @@ body{
     background-color: #FF5B35;
     margin-top: 205px;
     margin-left: 190px;
-
-
     transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
 }
 
-#h1-blauw{
+#header-blauw{
     color: #39BBD1;
     font-family: 'Comic Neue', cursive;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
 }
 
-#h1-oranje{
+#header-oranje{
     color: #F1DCBF;
     font-family: 'Comic Neue', cursive;
-    font-weight: bold;
+    font-weight: 700;
 }
