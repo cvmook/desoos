@@ -40,13 +40,18 @@ body{
     background-color: #F1DCBF;
 
     
-
+    transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
 }
 
 .box2{
     width: 438px;
     height: 122px;
     background-color: #FF5B35;
+    margin-top: 205px;
+    margin-left: 190px;
+
+
+    transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
 }
 
 #h1-blauw{
