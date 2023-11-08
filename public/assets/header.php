@@ -12,6 +12,9 @@
     
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- CSS and JavaScript libraries (if needed) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
