@@ -1,6 +1,3 @@
-<?php
-include("index.php");
-?>
 <div class="footer">
 <div class="container-fluid">
     <div class="row">
@@ -28,5 +25,10 @@ include("index.php");
     <div class="col-sm-4">
         <div class="footer-joehoe">
         <h2 class="footer-title"> joehoeee</h2>
+        <a href="index.php" class="navbar-brand">
+                    <img id="footer-logo" src="img\logo.png" alt="De Soos Kamperland logo">
+                </a>
+                <p>Protected by Copyrights.<br>
+        All Rights Reserved by Soos in kamperland © 2023</p>
     </div>
     </div>
