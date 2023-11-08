@@ -1,66 +1,135 @@
-body{
+body {
     background-color: #E7E7DF;
 }
 
+
 /****** ALGEMENE HEADER STYLING ******/
 
-#curvy-header-line{
+#curvy-header-line {
     position: fixed;
-    top:100px;
+    top: 100px;
     height: 100%;
     width: 100%;
 }
 
 .bird-animation {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  animation-name: birds;
-  animation-duration: 3s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: birds;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
 }
 
-#bird-position{
+#bird-position {
     margin-left: 50px;
-    
 }
 
 @keyframes birds {
-  0%   { left:0px; top:0px;}
-  25%  { left:0px; top:10px;}
-  50%  { left:0px; top:25px;}
-  75%  { left:0px; top:15px;}
-  100% { left:0px; top:0px;}
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        left: 0px;
+        top: 10px;
+    }
+    50% {
+        left: 0px;
+        top: 25px;
+    }
+    75% {
+        left: 0px;
+        top: 15px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
 }
 
-.box1{
+.box1 {
     width: 649px;
     height: 181px;
     background-color: #F1DCBF;
-
-    
-    transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
+    transform: rotate(-5deg);
+    /* Equal to rotateZ(45deg) */
 }
 
-.box2{
+.box2 {
     width: 438px;
     height: 122px;
     background-color: #FF5B35;
     margin-top: 205px;
     margin-left: 190px;
-    transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
+    transform: rotate(-5deg);
+    /* Equal to rotateZ(45deg) */
 }
 
-#header-blauw{
+#header-blauw {
     color: #39BBD1;
     font-family: 'Comic Neue', cursive;
     font-weight: 700;
     text-align: center;
 }
 
-#header-oranje{
+#header-oranje {
     color: #F1DCBF;
     font-family: 'Comic Neue', cursive;
     font-weight: 700;
+}
+
+
+/****** FOOTER STYLING ******/
+
+.footer {
+    background-color: #F5F6F1;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 50px;
+}
+
+.links-footer {
+    text-align: center;
+}
+
+.contact-footer {
+    text-align: center;
+}
+
+.footer-joehoe {
+    text-align: center;
+}
+
+.footer-title {
+    text-decoration: underline;
+    text-decoration-color: burlywood;
+    text-decoration-thickness: from-font;
+    text-underline-position: under;
+    color: #232323;
+}
+
+.contact-button {
+    padding: 10px 18px;
+    border-radius: 15px;
+    background-color: #39BBD1;
+    border: none;
+}
+
+.button-text {
+    font-weight: 500;
+    color: #F5F6F1;
+    margin-bottom: 0;
+}
+
+.footer-pages {
+    color: #232323;
+}
+
+.footer-pages:hover {
+    color: #232323;
+    text-decoration: none;
 }
