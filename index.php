@@ -101,7 +101,9 @@
   <p> Test Bedrijf - Test Bedrijf - Test Bedrijf </p>
 </div>
 
+<!-- ******** FIFTH SEGMENT ******** -->
 
+<!-- ******** SIXTH SEGMENT ******** -->
 
 <script src="js/card-list.js"></script>
 <?php include("footer.php");?>
