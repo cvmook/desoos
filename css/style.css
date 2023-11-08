@@ -1,68 +1,119 @@
-body{
-    background-color: #E7E7DF;
-}
-
 /****** ALGEMENE HEADER STYLING ******/
 
-#curvy-header-line{
-    position: fixed;
-    top:100px;
-    height: 100%;
-    width: 100%;
-}
+    #logo{
+        height: 50px;
+    }
 
-.bird-animation {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  animation-name: birds;
-  animation-duration: 3s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-}
+    #header-container{
+        background-color: #E7E7DF;
+        height: auto;
+    }
 
-#bird-position{
-    margin-left: 50px;
-    
-}
+    #curvy-line-div{
+        display: block;
+        margin-right: 60px;
 
-@keyframes birds {
-  0%   { left:0px; top:0px;}
-  25%  { left:0px; top:10px;}
-  50%  { left:0px; top:25px;}
-  75%  { left:0px; top:15px;}
-  100% { left:0px; top:0px;}
-}
+    }
 
-.box1{
-    width: 649px;
-    height: 181px;
-    background-color: #F1DCBF;
+    .bird-animation {
+    /* width: 100px; */
+    height: 100px;
+    /* position: relative;
+    animation-name: birds;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite; */
+    }
 
-    
-    transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
-}
+    #bird-position{
+        margin-top: 50px;
+        
+    }
 
-.box2{
-    width: 438px;
-    height: 122px;
-    background-color: #FF5B35;
-    margin-top: 205px;
-    margin-left: 190px;
+    @keyframes birds {
+    0%   { left:0px; top:0px;}
+    25%  { left:0px; top:10px;}
+    50%  { left:0px; top:25px;}
+    75%  { left:0px; top:15px;}
+    100% { left:0px; top:0px;}
+    }
+
+    .box1{
+        width: 649px;
+        height: 181px;
+        background-color: #F1DCBF;
 
 
-    transform: rotate(-5deg); /* Equal to rotateZ(45deg) */
-}
+        margin-top: 90px;
+        margin-left: 100px;
+        transform: rotate(-5deg); 
+    }
 
-#h1-blauw{
-    color: #39BBD1;
-    font-family: 'Comic Neue', cursive;
-    font-weight: bold;
-    text-align: center;
-}
+    .box2{
+        width: 438px;
+        height: 122px;
+        background-color: #FF5B35;
 
-#h1-oranje{
-    color: #F1DCBF;
-    font-family: 'Comic Neue', cursive;
-    font-weight: bold;
+
+        
+        margin-left: 210px;
+        transform: rotate(-5deg); 
+    }
+
+    #h1-blauw{
+        color: #39BBD1;
+        font-family: 'Comic Neue', cursive;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    #h1-oranje{
+        color: #F1DCBF;
+        font-family: 'Comic Neue', cursive;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+/****** SECOND SEGMENT ******/
+    #second-segment-row{
+        margin-top: 50px;
+    }
+
+    #second-segment-col-1{
+        margin-left: 185px;
+        border-right: 3px solid #F1DCBF;
+    }
+
+    #second-segment-col-2{
+        margin-left: 165px;
+
+    }
+
+    #second-segment-col-inner{
+        width: 500px;
+        height: 302px;
+    }
+
+    .second-segment-p{
+        font-family: sans-serif;
+        font-size: 25;
+        margin: auto;
+        margin-top: 100px;
+    }
+
+    #second-segment-h1{
+        font-family: 'Comic Neue', cursive;
+        font-weight: bold;
+        font-size: 700;
+        margin: auto;
+    }
+
+/****** THIRD SEGMENT ******/
+.info-box{
+    background-color: #39BBD1;
+    border-radius: 15px;
+    width: 486px;
+    height: 636px;
 }
