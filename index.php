@@ -3,7 +3,7 @@
 
 
 
-<!-- ******** Main Header ******** -->
+<!-- ******** FIRST SEGMENT ******** -->
 
 <!-- <div class="container-fluid" id="header-container">
   <div class="row">
@@ -41,12 +41,12 @@
 
 <!-- ******** SECOND SEGMENT ******** -->
 
-
+<div class="container">
   <div class="row" id="second-segment-row">
     <div class="col" id="second-segment-col-1">
       <p class="second-segment-p">De jeugd Soos</p>
-      <h1 id="second-segment-h1">DE LEUKSTE ACTIVITEITEN <BR> VINDT JE HIER !</h1>
-      <p class="second-segment-href">lees meer</p>
+      <h1 id="second-segment-h1">DE LEUKSTE ACTIVITEITEN VINDT JE HIER !</h1>
+      <a class="second-segment-href" href="#">lees meer</a>
     </div>
     <div class="col" id="second-segment-col-2">
       <div id="second-segment-col-inner">
@@ -60,35 +60,50 @@
       </div>
     </div>
   </div>
+</div>
 
-<!-- ******** ThIRD SEGMENT ******** -->
+<!-- ******** THIRD SEGMENT ******** -->
 
-<div class="container">
-  <div class="row justify-content-center">
+<ul class="card-list">
+	
+	<li class="card" id="card-color-1">
+		<a class="card-image" id="card-color-1" href="#" target="_blank" data-image-full="img/3537552-removebg-preview.png">
+			<img src="img/3537552-removebg-preview.png" alt="Activiteiten" />
+		</a>
+		<a class="card-description" href="#" target="_blank">
+			<h2>Activiteiten</h2>
+		</a>
+	</li>
+	
+	<li class="card" id="card-color-2">
+		<a class="card-image" id="card-color-2" href="#" target="_blank" data-image-full="img/3537341-removebg-preview.png">
+			<img src="img/3537341-removebg-preview.png" alt="Over Ons" />
+		</a>
+		<a class="card-description" href="#" target="_blank">
+			<h2>Over ons</h2>
+		</a>
+	</li>
+	
+	<li class="card" id="card-color-3">
+		<a class="card-image" id="card-color-3" href="#" target="_blank" data-image-full="img/3537552-removebg-preview.png">
+			<img src="img/3537552-removebg-preview.png" alt="Activiteiten" />
+		</a>
+		<a class="card-description" href="#" target="_blank">
+			<h2>Foto Album</h2>
+		</a>
+	</li>
+	
+</ul>
 
-    <div class="col-lg-4 col-md-12">
-      <div class="info-box">
-        j dj dkj
-      </div>
-    </div>
+<!-- ******** FOURTH SEGMENT ******** -->
 
-    <div class="col-lg-4 col-md-6">
-      <div class="info-box">
-        j dj dkj
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-      <div class="info-box">
-        j dj dkj
-      </div>
-    </div>
-
-  </div>
+<div class="scroll-right">
+  <p> Test Bedrijf - Test Bedrijf - Test Bedrijf </p>
 </div>
 
 
 
-</div>
+<script src="js/card-list.js"></script>
+
 </body>
 </html>
