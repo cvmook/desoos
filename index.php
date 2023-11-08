@@ -1,6 +1,6 @@
 <?php include("public/assets/header.php");?>
 
-
+<?php include("firstsegment.php");?>
 
 
 <!-- ******** FIRST SEGMENT ******** -->
@@ -104,6 +104,6 @@
 
 
 <script src="js/card-list.js"></script>
-
+<?php include("footer.php");?>
 </body>
 </html>

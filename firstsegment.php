@@ -1,4 +1,4 @@
-<?php include("public/assets/header.php");?>
+
 
 <!-- ******** Main Header ******** -->
 <div class="firstsegment">
@@ -37,4 +37,3 @@
 </div>
 
 
-<?php include("footer.php");?>
