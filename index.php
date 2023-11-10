@@ -2,7 +2,7 @@
 
 <!-- ******** FIRST SEGMENT ******** -->
 
-<?php //include("firstsegment.php");?>
+<?php //include("public/assests/firstsegment.php");?>
 
 <!-- ******** SECOND SEGMENT ******** -->
 
@@ -135,7 +135,7 @@
   <div class="row gx-5 justify-content-center">
 
     <div class="col-lg-4 col-md-12 mb-4">
-Placeholder for img
+        Placeholder for img
     </div>
 
     <div class="col-lg-4 col-md-6 mb-4" id="sixth-segment-col">
@@ -151,6 +151,7 @@ Placeholder for img
   </div>
 </div>
 
+<!-- ******** END OF PAGE ITEMS ******** -->
 <script src="js/card-list.js"></script>
 <?php include("public/assets/footer.php");?>
 </body>
