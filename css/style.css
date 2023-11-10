@@ -126,18 +126,18 @@
     margin-top: 50px;
 }
 
-#second-segment-col-1 {
-    /* margin-left: 185px; */
-    border-right: 3px solid #F1DCBF;
-}
 
-#second-segment-col-2 {
-    margin-left: 165px;
+.vertical {
+    border-left: 3px solid #F1DCBF;
+    height: 200px;
+    margin-top: 80px;
+    display: none;
 }
 
 #second-segment-col-inner {
     width: 500px;
     height: 302px;
+    
 }
 
 .second-segment-p {
@@ -159,6 +159,49 @@
     font-size: 700;
     margin: auto;
 }
+
+/* Media query for screens smaller than 768px (mobile) */
+@media (max-width: 767px) {
+    .vertical {
+        border-left: none;
+        border-top: 3px solid #F1DCBF;
+        width: 100%;
+        height: auto;
+        position: relative;
+        left: 0;
+        margin-top: 20px;
+        display: block; /* Show on smaller screens */
+    }
+
+    #second-segment-col-2 {
+        margin-left: 0; /* Reset margin */
+    }
+
+    #second-segment-col-inner {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 500px; /* Limit the width if needed */
+        margin: auto;
+    }
+}
+
+/* Media query for screens between 769px and 991px (tablet) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .vertical {
+        display: none; /* Hide on tablet screens */
+    }
+
+    #second-segment-col-2 {
+        margin-left: 0; /* Reset margin */
+    }
+
+    #second-segment-col-inner {
+        width: 100%; /* Full width on tablet screens */
+        max-width: none; /* Remove max-width on tablet screens */
+        margin: auto;
+        padding: 0 10px; /* Adjust padding for better spacing */
+    }
+}
+
 
 
 /****** THIRD SEGMENT ******/
@@ -314,6 +357,98 @@
     }
 }
 
+
+/****** FIFTH SEGMENT STYLING ******/
+
+.carousel, .slide{
+    background-color: #F1DCBF;
+    max-height: 632px;
+    max-width: 698px;
+    border-radius: 10px;
+}
+
+.carousel-item {
+    max-height: 632px;
+    max-width: 698px;
+}
+
+.fifth-segment-icon {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+    float: left;
+    margin-top: 12px;
+    
+}
+  
+  #row-fifth-segment {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .col-xs-12.col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#gold-rank{
+    background-color: #D4AF37; /* Adjust the background color as needed */
+    border-radius: 10px;
+    height: 123px;
+    margin-bottom: 50px;
+    
+}
+
+#silver-rank{
+    background-color: #AAA9AD;
+    border-radius: 10px;
+    height: 123px;
+    margin-bottom: 76px;
+}
+
+#bronze-rank{
+    background-color: #A97142;
+    border-radius: 5px;
+    height: 123px;
+    margin-bottom: 76px;
+}
+
+.fifth-segment-h3{
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    font-size: 700;
+    margin: auto;
+    text-align: center;
+    margin-top: 45px;
+}
+
+/****** SIXTH SEGMENT STYLING ******/
+
+#sixth-segment-col{
+    text-align: center;
+}
+
+.sixth-segment-p{
+    text-align: center;
+}
+
+.sixth-segment-h1{
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    font-size: 700;
+    margin: auto;
+    text-align: center;
+}
+
+.sixth-segment-button{
+    padding: 10px 18px;
+    border-radius: 15px;
+    background-color: #39BBD1;
+    border: none;
+}
 
 /****** FOOTER STYLING ******/
 

@@ -31,3 +31,5 @@ function lazyLoad() {
 	});
 	
 }
+
+/****** FOURTH SEGMENT STYLING ******/
