@@ -269,6 +269,10 @@
     background-color: #FF5B35;
 }
 
+#card-color-4 {
+    background-color: #58F8A4;
+}
+
 .card:hover {
     transform: translateY(-0.5rem) scale(1.0125);
     box-shadow: 0 0.5em 3rem -1rem rgba(0, 0, 0, 0.5);

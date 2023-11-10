@@ -38,8 +38,8 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="geuren.php" class="nav-item nav-link">Geuren</a>
-                        <a href="cosmetica.php" class="nav-item nav-link">Cosmetica</a>
+                        <a href="activiteiten.php" class="nav-item nav-link">Activiteiten</a>
+                        <a href="overons.php" class="nav-item nav-link">Over Ons</a>
                     </div>
                 </div>
             </div>
