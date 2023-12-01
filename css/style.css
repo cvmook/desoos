@@ -699,6 +699,7 @@ details summary::-webkit-details-marker {
 
 #gold-rank {
     background-color: #D4AF37;
+    /* Adjust the background color as needed */
     border-radius: 10px;
     height: 123px;
     margin-bottom: 50px;
@@ -708,14 +709,14 @@ details summary::-webkit-details-marker {
     background-color: #AAA9AD;
     border-radius: 10px;
     height: 123px;
-    margin-bottom: 50px;
+    margin-bottom: 76px;
 }
 
 #bronze-rank {
     background-color: #A97142;
-    border-radius: 10px;
+    border-radius: 5px;
     height: 123px;
-    margin-bottom: 50px;
+    margin-bottom: 76px;
 }
 
 .fifth-segment-h3 {
@@ -770,12 +771,42 @@ details summary::-webkit-details-marker {
 }
 
 
-/* Custom CSS to hide left image on tablets and mobiles */
+/****** SECOND SEGMENT FOTOALBUM STYLING ******/
 
-@media (max-width: 991px) {
-    .hide-on-tablet-mobile {
-        display: none !important;
-    }
+.fotoalbum-image {
+    width: 50%;
+    height: auto;
+}
+
+#col4 {
+    margin-top: 50px;
+}
+
+#totalpages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#totalpages strong {
+    margin-bottom: 10px;
+}
+
+#previous,
+#next {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#previous:hover,
+#next:hover {
+    background-color: #0056b3;
 }
 
 

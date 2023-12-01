@@ -96,6 +96,7 @@ include("public/assets/firstsegment.php");
       </div>
     </div>
   </div>
+</div>
 
 
 

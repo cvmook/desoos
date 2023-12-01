@@ -32,6 +32,7 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
       </div>
     </div>
   </div>
+</div>
 
 
 
