@@ -16,10 +16,10 @@ else if($_SERVER['HTTP_HOST'] == 'localhost'){
 }
 else{
     // Live values
-    define('DB_SERVER', '');
-    define('DB_USERNAME', '');
-    define('DB_PASSWORD', '');
-    define('DB_DATABASE', '');
+    define('DB_SERVER', 'rdbms.strato.de');
+    define('DB_USERNAME', 'dbu4051145');
+    define('DB_PASSWORD', 'fXtHWjqFW5hngBX');
+    define('DB_DATABASE', 'dbs12281931');
 }
 class Database  {
     public $connection;
