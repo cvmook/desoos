@@ -1,8 +1,15 @@
-<?php include("public/assets/header.php");?>
+<?php 
+include("model/Sponsor.php");
+include("model/Image.php"); 
+$Image = new Image(); 
+$Sponsor = new Sponsor();
+?>
+
+<?php include("public/assets/header.php"); ?>
 
 <!-- ******** FIRST SEGMENT ******** -->
 
-<?php //include("public/assests/firstsegment.php");?>
+<?php include("public/assets/firstsegment.php");?>
 
 <!-- ******** SECOND SEGMENT ******** -->
 
@@ -10,7 +17,7 @@
   <div class="row" id="second-segment-row">
     <div class="col-md-6">
       <p class="second-segment-p">De jeugd Soos</p>
-      <h1 id="second-segment-h1">WAT IS ONS VERHAAL</h1>
+      <h1 class="second-segment-h1">WAT IS ONS VERHAAL</h1>
     </div>
     <div class="col-md-6">
       <div class="vertical"></div>
@@ -29,7 +36,7 @@
 
 
 <ul class="card-list">
-<h1 id="second-segment-h1">WAT IS ONS VERHAAL</h1>
+<h1 class="second-segment-h1">WAT IS ONS VERHAAL</h1>
 	<li class="card" id="card-color-1">
 		<a class="card-image" id="card-color-1" href="#" target="_blank" data-image-full="img/3537552-removebg-preview.png">
 			<img src="img/3537552-removebg-preview.png" alt="Activiteiten" />
@@ -71,7 +78,7 @@
 <!-- ******** FOURTH SEGMENT ******** -->
 
 <div class="scroll-right">
-  <p> Test Bedrijf - Test Bedrijf - Test Bedrijf </p>
+  <p><?=$Sponsor->getSponsorSlider();?></p>
 </div>
 
 <!-- ******** FIFTH SEGMENT ******** -->
@@ -80,7 +87,7 @@
   <div class="row" id="row-fifth-segment">
     <div class="col-xs-12 col-md-6 mb-4">
       <div class="pb-3">
-        <h1 id="second-segment-h1">VRIENDEN VAN DE SOOS</h1>
+        <h1 class="second-segment-h1">VRIENDEN VAN DE SOOS</h1>
       </div>
       <div class="row">
         <div class="col" id="gold-rank">
@@ -161,7 +168,6 @@
 </div>
 
 <!-- ******** END OF PAGE ITEMS ******** -->
-<script src="js/card-list.js"></script>
 <?php include("public/assets/footer.php");?>
 </body>
 </html>

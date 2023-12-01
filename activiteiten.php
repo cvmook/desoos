@@ -1,8 +1,13 @@
-<?php include("public/assets/header.php");?>
+<?php
+include("model/Image.php"); 
+$Image = new Image();
+?>
+
+<?php include("public/assets/header.php"); ?>
 
 <!-- ******** FIRST SEGMENT ******** -->
 
-<?php //include("public/assests/firstsegment.php");?>
+<?php include("public/assets/firstsegment.php");?>
 
 <!-- ******** SECOND SEGMENT ******** -->
 
@@ -10,7 +15,7 @@
   <div class="row" id="second-segment-row">
     <div class="col-md-6">
       <p class="second-segment-p">De jeugd Soos</p>
-      <h1 id="second-segment-h1">DE LEUKSTE ACTIVITEITEN VINDT JE HIER !</h1>
+      <h1 class="class">DE LEUKSTE ACTIVITEITEN VINDT JE HIER !</h1>
     </div>
     <div class="col-md-6">
       <div class="vertical"></div>
@@ -27,14 +32,8 @@
 
 <!-- ******** THIRD SEGMENT ******** -->
 
-    <!-- ******** ACTIVITY TABLE FROM BACKEND ******** -->
+    <!-- ******** ACTIVITY TABLE FROM BACKEND ******** -->z
 
-
-<!-- ******** FOURTH SEGMENT ******** -->
-
-<div class="scroll-right">
-  <p> Test Bedrijf - Test Bedrijf - Test Bedrijf </p>
-</div>
 
 <!-- ******** FIFTH SEGMENT ******** -->
 <div class="container">  
@@ -123,7 +122,6 @@
 </div>
 
 <!-- ******** END OF PAGE ITEMS ******** -->
-<script src="js/card-list.js"></script>
 <?php include("public/assets/footer.php");?>
 </body>
 </html>

@@ -1,4 +1,7 @@
-/****** ALGEMENE HEADER STYLING ******/
+/****** FRONTEND STYLING ******/
+
+
+/****** FIRST SEGMENT ******/
 
 .m-4 {
     background-color: #E7E7DF;
@@ -31,53 +34,6 @@
     margin-right: 60px;
 }
 
-.bird-animation {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    animation-name: birds;
-    animation-duration: 3s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-}
-
-.bird-animation {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    animation-name: birds;
-    animation-duration: 3s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-}
-
-#bird-position {
-    margin-top: 50px;
-}
-
-@keyframes birds {
-    0% {
-        left: 0px;
-        top: 0px;
-    }
-    25% {
-        left: 0px;
-        top: 10px;
-    }
-    50% {
-        left: 0px;
-        top: 25px;
-    }
-    75% {
-        left: 0px;
-        top: 15px;
-    }
-    100% {
-        left: 0px;
-        top: 0px;
-    }
-}
-
 .box1 {
     width: 649px;
     height: 181px;
@@ -85,14 +41,6 @@
     margin-top: 90px;
     margin-left: 100px;
     transform: rotate(-5deg);
-}
-
-.box1 {
-    width: 649px;
-    height: 181px;
-    background-color: #F1DCBF;
-    transform: rotate(-5deg);
-    /* Equal to rotateZ(45deg) */
 }
 
 .box2 {
@@ -103,20 +51,60 @@
     transform: rotate(-5deg);
 }
 
-#h1-blauw {
-    color: #39BBD1;
+#h1-blauw,
+#h1-oranje {
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
     text-align: center;
+}
+
+#h1-blauw {
+    color: #39BBD1;
     padding-top: 60px;
 }
 
 #h1-oranje {
     color: #F1DCBF;
-    font-family: 'Comic Neue', cursive;
-    font-weight: bold;
-    text-align: center;
     padding-top: 40px;
+}
+
+img.img-fluid {
+    max-width: 100%;
+    position: relative;
+    height: auto;
+    display: block;
+    /* Remove any extra spacing below the image */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+    .box1 {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        margin-left: 0;
+        /* transform: none; */
+        transform: rotate(-3deg);
+    }
+    .box2 {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        /* transform: none; */
+        transform: rotate(-3deg);
+    }
+    #h1-blauw {
+        color: #39BBD1;
+        padding-top: 10px;
+    }
+    #h1-oranje {
+        color: #F1DCBF;
+        padding-top: 15px;
+    }
 }
 
 
@@ -125,7 +113,6 @@
 #second-segment-row {
     margin-top: 50px;
 }
-
 
 .vertical {
     border-left: 3px solid #F1DCBF;
@@ -137,7 +124,6 @@
 #second-segment-col-inner {
     width: 500px;
     height: 302px;
-    
 }
 
 .second-segment-p {
@@ -153,14 +139,16 @@
     border-bottom: 2px solid #39BBD1;
 }
 
-#second-segment-h1 {
+.second-segment-h1 {
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
     font-size: 700;
     margin: auto;
 }
 
+
 /* Media query for screens smaller than 768px (mobile) */
+
 @media (max-width: 767px) {
     .vertical {
         border-left: none;
@@ -170,38 +158,44 @@
         position: relative;
         left: 0;
         margin-top: 20px;
-        display: block; /* Show on smaller screens */
+        display: block;
+        /* Show on smaller screens */
     }
-
     #second-segment-col-2 {
-        margin-left: 0; /* Reset margin */
+        margin-left: 0;
+        /* Reset margin */
     }
-
     #second-segment-col-inner {
-        width: 100%; /* Full width on smaller screens */
-        max-width: 500px; /* Limit the width if needed */
+        width: 100%;
+        /* Full width on smaller screens */
+        max-width: 500px;
+        /* Limit the width if needed */
         margin: auto;
     }
 }
+
 
 /* Media query for screens between 769px and 991px (tablet) */
+
 @media (min-width: 768px) and (max-width: 991px) {
     .vertical {
-        display: none; /* Hide on tablet screens */
+        display: none;
+        /* Hide on tablet screens */
     }
-
     #second-segment-col-2 {
-        margin-left: 0; /* Reset margin */
+        margin-left: 0;
+        /* Reset margin */
     }
-
     #second-segment-col-inner {
-        width: 100%; /* Full width on tablet screens */
-        max-width: none; /* Remove max-width on tablet screens */
+        width: 100%;
+        /* Full width on tablet screens */
+        max-width: none;
+        /* Remove max-width on tablet screens */
         margin: auto;
-        padding: 0 10px; /* Adjust padding for better spacing */
+        padding: 0 10px;
+        /* Adjust padding for better spacing */
     }
 }
-
 
 
 /****** THIRD SEGMENT ******/
@@ -215,21 +209,11 @@
     /* layout hack */
     background: #fff center center no-repeat;
     background-size: cover;
-    filter: blur(3px);
-    /* blur the lowres image */
 }
 
 .card-image>img {
     display: block;
     width: 100%;
-    opacity: 0;
-    /* visually hide the img element */
-}
-
-.card-image.is-loaded {
-    filter: none;
-    /* remove the blur on fullres image */
-    transition: filter 1s;
 }
 
 
@@ -364,7 +348,8 @@
 
 /****** FIFTH SEGMENT STYLING ******/
 
-.carousel, .slide{
+.carousel,
+.slide {
     background-color: #F1DCBF;
     max-height: 632px;
     max-width: 698px;
@@ -377,50 +362,61 @@
 }
 
 .fifth-segment-icon {
-    width: 100px; /* Adjust the width as needed */
-    height: 100px; /* Adjust the height as needed */
-    margin-right: 10px; /* Adjust the margin as needed */
+    width: 100px;
+    /* Adjust the width as needed */
+    height: 100px;
+    /* Adjust the height as needed */
+    margin-right: 10px;
+    /* Adjust the margin as needed */
     float: left;
     margin-top: 12px;
-    
 }
-  
-  #row-fifth-segment {
+
+.fifth-segment-h1 {
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    font-size: 700;
+}
+
+#row-fifth-segment {
     margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-  
-  .col-xs-12.col-md-6 {
+
+.col-xs-12.col-md-6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#gold-rank{
-    background-color: #D4AF37; /* Adjust the background color as needed */
+
+/****** RANK STYLING ******/
+
+#gold-rank {
+    background-color: #D4AF37;
+    /* Adjust the background color as needed */
     border-radius: 10px;
     height: 123px;
     margin-bottom: 50px;
-    
 }
 
-#silver-rank{
+#silver-rank {
     background-color: #AAA9AD;
     border-radius: 10px;
     height: 123px;
     margin-bottom: 76px;
 }
 
-#bronze-rank{
+#bronze-rank {
     background-color: #A97142;
     border-radius: 5px;
     height: 123px;
     margin-bottom: 76px;
 }
 
-.fifth-segment-h3{
+.fifth-segment-h3 {
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
     font-size: 700;
@@ -429,17 +425,34 @@
     margin-top: 45px;
 }
 
+#rank-dropdown {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
 /****** SIXTH SEGMENT STYLING ******/
 
-#sixth-segment-col{
+#sixth-segment-col {
     text-align: center;
 }
 
-.sixth-segment-p{
+.sixth-segment-p {
     text-align: center;
 }
 
-.sixth-segment-h1{
+.sixth-segment-h1 {
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
     font-size: 700;
@@ -447,12 +460,52 @@
     text-align: center;
 }
 
-.sixth-segment-button{
+.sixth-segment-button {
     padding: 10px 18px;
     border-radius: 15px;
     background-color: #39BBD1;
     border: none;
 }
+
+
+/****** SECOND SEGMENT FOTOALBUM STYLING ******/
+
+.fotoalbum-image {
+    width: 50%;
+    height: auto;
+}
+
+#col4 {
+    margin-top: 50px;
+}
+
+#totalpages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#totalpages strong {
+    margin-bottom: 10px;
+}
+
+#previous,
+#next {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#previous:hover,
+#next:hover {
+    background-color: #0056b3;
+}
+
 
 /****** FOOTER STYLING ******/
 
@@ -509,4 +562,96 @@
 .footer-pages:hover {
     color: #232323;
     text-decoration: none;
+}
+
+
+/****** BACK-END STYLING ******/
+
+.backend-body {
+    background-color: #E7E7DF;
+}
+
+.backend-title {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.backend-table {
+    width: 60%;
+    background-color: #F1DCBF;
+    margin: auto;
+    margin-top: 10px;
+    border: 2px solid #B3B3A8;
+    border-radius: 30px;
+    padding-top: 10px;
+}
+
+.back-button {
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 20%;
+}
+
+.back-button2 {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.add-button {
+    padding: 10px;
+    border-radius: 8px;
+    float: right;
+    margin-right: 20%;
+}
+
+.red {
+    color: red;
+}
+
+
+/* Deletes Arrows From Number Fields */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.table-image {
+    width: auto;
+    height: 100px;
+}
+
+
+/****** DASHBOARD STYLING ******/
+
+#logout-icon {
+    color: #000;
+    float: right;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.dashboard-items {
+    width: 60%;
+    background-color: #F1DCBF;
+    margin: auto;
+    border-radius: 40px;
+    padding: 50px 0px 50px 0px;
+}
+
+.dashboard-item {
+    text-align: center;
+}
+
+.dashboard-item:hover {
+    background-color: #d8c6ac;
+}
+
+
+/****** USERS STYLING ******/
+
+#user-add-button {
+    margin-left: 10px;
 }
