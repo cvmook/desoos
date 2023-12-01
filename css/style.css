@@ -699,6 +699,7 @@ details summary::-webkit-details-marker {
 
 #gold-rank {
     background-color: #D4AF37;
+    /* Adjust the background color as needed */
     border-radius: 10px;
     height: 123px;
     margin-bottom: 50px;
@@ -776,6 +777,42 @@ details summary::-webkit-details-marker {
     .hide-on-tablet-mobile {
         display: none !important;
     }
+/****** SECOND SEGMENT FOTOALBUM STYLING ******/
+
+.fotoalbum-image {
+    width: 50%;
+    height: auto;
+}
+
+#col4 {
+    margin-top: 50px;
+}
+
+#totalpages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#totalpages strong {
+    margin-bottom: 10px;
+}
+
+#previous,
+#next {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#previous:hover,
+#next:hover {
+    background-color: #0056b3;
 }
 
 

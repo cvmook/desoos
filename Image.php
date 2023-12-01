@@ -1,9 +1,8 @@
 <?php
 
-/* ******** INCLUDE NECESSARY FILES ******** */
+// Include necessary files
 include_once("Database.php");
 
-/* ******** INITIALIZE IMAGE CLASS ******** */ 
 class Image {
 
     private $imageId;
@@ -14,13 +13,8 @@ class Image {
 
 /* ******** DBCONNECT ******** */
     private function DbConnect() {
-        // Create a new Database object
         $this->db = new Database();
-        
-        // Retrieve the Database object reference
         $this->db = $this->db->retObj();
-        
-        // Return the Database object for use in the calling code
         return $this->db;
     }
 
@@ -29,7 +23,7 @@ class Image {
     /* ******** SETTERS ******** */
 
         /* SET IMAGE ID */
-            public function setImageId($imageId) {
+            public function setId($imageId) {
                 $this->imageId = $imageId;
             }
 
@@ -47,7 +41,7 @@ class Image {
     /* ******** GETTERS ******** */
 
         /* GET IMAGE ID */
-        public function getImageId() {
+        public function getId() {
             return $this->imageId;
         }
 
@@ -135,7 +129,7 @@ class Image {
 
 /* ******** GET IMAGE ID ******** */
     // Function to retrieve imageid from 'images' table based on criteria.
-    private function getImageId1($criteria) {
+    private function getImageId($criteria) {
         $connection = $this->DbConnect();
     
         // Use a SELECT query to retrieve the fileid based on the criteria.
@@ -186,7 +180,7 @@ class Image {
             $Image = new Image();
 
             // Set properties of the Image object based on the database
-            $Image->setImageId($array['image_id']);
+            $Image->setId($array['image_id']);
             $Image->setImageName($array['imagename']);
             $Image->setImageAlt($array['imagealt']);
 
@@ -205,36 +199,29 @@ class Image {
             if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
                 $page_no = $_GET['page_no'];
             } else {
-                // if first page page number is 1
                 $page_no = 1;
             }
-                // total records shown per page adjust as needed
-                $total_records_per_page = 5;
-                // if page has less then 6 -1 page = page 1
+                $total_records_per_page = 5; // Adjust as needed
                 $offset = ($page_no - 1) * $total_records_per_page;
-                // go back to previous page = -1 to page number
                 $previous_page = $page_no - 1;
-                // go to next page = +1 to page number
                 $next_page = $page_no + 1;
-                
+    
+        // Get paginated records
+            $sql = "SELECT * FROM `images`
+                    LEFT JOIN `images-locaties` ON images.image_id = `images-locaties`.image_id
+                    LEFT JOIN `locations` ON `images-locaties`.location_id = locations.location_id
+                    LIMIT $offset, $total_records_per_page";
+        
+            $result = $this->DbConnect()->query($sql);
     
         // Get total records for pagination calculation
-        $sql_count = "SELECT COUNT(DISTINCT images.image_id) AS total_records FROM `images`
-                      LEFT JOIN `images-locaties` ON images.image_id = `images-locaties`.image_id
-                      LEFT JOIN `locations` ON `images-locaties`.location_id = locations.location_id";
+            $sql_count = "SELECT COUNT(*) AS total_records FROM `images`
+                        LIMIT $offset, $total_records_per_page";
         
             $result_count = $this->DbConnect()->query($sql_count);
             $total_records = mysqli_fetch_array($result_count);
             $total_records = $total_records['total_records'];
             $total_no_of_pages = ceil($total_records / $total_records_per_page);
-
-        // Get paginated records
-            $sql = "SELECT * FROM `images`
-            LEFT JOIN `images-locaties` ON images.image_id = `images-locaties`.image_id
-            LEFT JOIN `locations` ON `images-locaties`.location_id = locations.location_id
-            LIMIT $offset, $total_records_per_page";
-        
-            $result = $this->DbConnect()->query($sql);
     
         // Display records
             while ($row = mysqli_fetch_assoc($result)) {
@@ -356,9 +343,7 @@ class Image {
             $fileName = $_FILES["fileToUpload"]["name"];
             $file = explode('.', $fileName);
 
-            // if file has already been uploaded before ads random numbers between 1 to 10000
             $rand = rand(1, 10000);
-            // adds the random number after the filename
             $fileName = $file[0] . $rand . '.' . $file[1];
 
             $target_file = $target_dir . $fileName;
@@ -366,13 +351,13 @@ class Image {
 
         // Allow certain file formats
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "svg") {
-            // needs to be the same as the amount of file formats above
             $uploadOk = 4;
         }
 
         // Check if $uploadOk is set to 0 by an error
         if (in_array($uploadOk, array(0, 2, 3, 4))) {
             // Handle the error (You may want to log or display an error message)
+            var_dump($uploadOk);
         } else {
             // Try to move the uploaded file to the target directory
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -457,20 +442,19 @@ class Image {
             }
 
             // Allow certain file formats
-            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "svg") {
-                // needs to be the same as the amount of file formats above
+            if (
+                $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "svg"
+            ) {
                 $uploadOk = 4;
             }
 
-            // Check if the file already exists and resolve by renaming
+            // Check if file already exists
             if (file_exists($target_file)) {
                 $fileName = $_FILES["fileToUpload"]["name"];
-                $file = explode('.', $fileName);
+                $file = explode('.',$fileName);
 
-                // if file has already been uploaded before ads random numbers between 1 to 10000
-                $rand = rand(1, 10000);
-                // adds the random number after the filename
-                $fileName = $file[0] . $rand . '.' . $file[1];
+                $rand = rand(1,10000);
+                $fileName = $file[0].$rand.'.'.$file[1];
 
                 $target_file = $target_dir . $fileName;
             }
@@ -536,8 +520,10 @@ class Image {
             // Check if the POST variables are set and not empty.
             if (isset($_POST['location_id']) && !empty($_POST['location_id'])) {
                 // Retrieve the appropriate  from the 'images' table based on some criteria.
-                $imageId = $this->getImageId1($_POST['imagename']);
+                $imageId = $this->getImageId($_POST['imagename']);
                 $locationId = $_POST['location_id'];
+                // var_dump used for debugging the insert junction table
+                    // var_dump($_POST['imagename']);
                 if ($imageId !== null) {
                     // Use prepared statement to insert data into the junction table.
                     $sql = "INSERT INTO `images-locaties` (image_id, location_id) VALUES (?, ?)";
@@ -621,21 +607,16 @@ class Image {
 /* ******** Get IMAGE GRID ******** */
     public function getImageGrid() {
         // PAGINATION
-            if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
-                $page_no = $_GET['page_no'];
-            } else {
-                // if first page page number is 1
-                $page_no = 1;
-            }
-                // total records shown per page adjust as needed
-                $total_records_per_page = 12;
-                // if page has less then 6 -1 page = page 1
-                $offset = ($page_no - 1) * $total_records_per_page;
-                // go back to previous page = -1 to page number
-                $previous_page = $page_no - 1;
-                // go to next page = +1 to page number
-                $next_page = $page_no + 1;
-        
+        if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
+            $page_no = $_GET['page_no'];
+        } else {
+            $page_no = 1;
+        }
+        $total_records_per_page = 12;
+        $offset = ($page_no - 1) * $total_records_per_page;
+        $previous_page = $page_no - 1;
+        $next_page = $page_no + 1;
+        $adjacents = "2";
 
         // Get total records
         $sql_count = "SELECT COUNT(DISTINCT images.image_id) AS total_records FROM `images`
@@ -662,14 +643,13 @@ class Image {
 
             echo "<div class='col-lg-4 col-md-6 col-sm-12 mb-4 text-center' id='col4'>"; // Added text-center for centering
             echo "<div class='fotoalbum-item'>";
-            echo "<img class='fotoalbum-image img-fluid' src='img/gallery/" . $row['imagename'] . "' alt='Image'> <br>";
+            echo "<img id='fotoalbum-item' class='img-fluid' src='img/gallery/" . $row['imagename'] . "' alt='Image'> <br>";
             echo "<div class='prinfo'>";
             echo "<div class='prtitle'>";
             echo "</div>";
             echo "</div>";
             echo "</div>";
             echo "</div>";
-            
             
         }
 
@@ -690,100 +670,38 @@ class Image {
         $this->DbConnect()->close();
     }
 
-/* ******** IMAGE LOCATIONS ******** */
+/* ******** LOGOLOCATION ******** */
 
-    /* ******** LOGOLOCATION ******** */
+    public function getLogo() {
+        // Query to select the image_id associated with the location_id 3 from the junction table
+        $query = "SELECT `image_id` FROM `images-locaties` WHERE `location_id` = 3";
 
-        public function getLogo() {
-            // Query to select the image_id associated with the location_id = 3 from the junction table
-            $query = "SELECT `image_id` FROM `images-locaties` WHERE `location_id` = 3";
+        // Execute the query using the database connection
+        $result = mysqli_query($this->DbConnect(), $query);
 
-            // Execute the query using the database connection
-            $result = mysqli_query($this->DbConnect(), $query);
+        // Loop through each row in the result set
+        while ($row = mysqli_fetch_array($result)) {
+            // Get the image_id from the current row
+            $imageId = $row['image_id'];
 
-            // Loop through each row in the result set
-            while ($row = mysqli_fetch_array($result)) {
-                // Get the image_id from the current row
-                $imageId = $row['image_id'];
+            // Query to select the imagename associated with the retrieved image_id from the 'images' table
+            $queryImg = "SELECT `imagename` FROM `images` WHERE `image_id` = $imageId";
 
-                // Query to select the imagename associated with the retrieved image_id from the 'images' table
-                $queryImg = "SELECT `imagename` FROM `images` WHERE `image_id` = $imageId";
+            // Execute the query to get the image details
+            $resultImg = mysqli_query($this->DbConnect(), $queryImg);
 
-                // Execute the query to get the image details
-                $resultImg = mysqli_query($this->DbConnect(), $queryImg);
-
-                // Loop through each row in the result set of the second query
-                while ($rowImg = mysqli_fetch_array($resultImg)) {
-                    // Output the logo image using the imagename and the specified path
-                    echo '<img id="logo" src="img/gallery/' . $rowImg["imagename"] . '" ><br>';
-                }
+            // Loop through each row in the result set of the second query
+            while ($rowImg = mysqli_fetch_array($resultImg)) {
+                // Output the logo image using the imagename and the specified path
+                echo '<img id="logo" src="img/gallery/' . $rowImg["imagename"] . '" ><br>';
             }
-
-            // Close the database connection
-            $this->DbConnect()->close();
         }
 
-    /* ******** IMAGE LOCATION BOTTOM LEFT ******** */
+        // Close the database connection
+        $this->DbConnect()->close();
+    }
 
-        public function getImageleft() {
-            // Query to select the image_id associated with the location_id = 1 from the junction table
-            $query = "SELECT `image_id` FROM `images-locaties` WHERE `location_id` = 1";
-    
-            // Execute the query using the database connection
-            $result = mysqli_query($this->DbConnect(), $query);
-    
-            // Loop through each row in the result set
-            while ($row = mysqli_fetch_array($result)) {
-                // Get the image_id from the current row
-                $imageId = $row['image_id'];
-    
-                // Query to select the imagename associated with the retrieved image_id from the 'images' table
-                $queryImg = "SELECT `imagename` FROM `images` WHERE `image_id` = $imageId";
-    
-                // Execute the query to get the image details
-                $resultImg = mysqli_query($this->DbConnect(), $queryImg);
-    
-                // Loop through each row in the result set of the second query
-                while ($rowImg = mysqli_fetch_array($resultImg)) {
-                    // Output the logo image using the imagename and the specified path
-                    echo '<img id="image-bottom" src="img/gallery/' . $rowImg["imagename"] . '" ><br>';
-                    }
-                }
-    
-                // Close the database connection
-                $this->DbConnect()->close();
-            }
 
-        /* ******** IMAGE LOCATION BOTTOM LEFT ******** */
-
-            public function getImageRight() {
-                // Query to select the image_id associated with the location_id = 2 from the junction table
-                $query = "SELECT `image_id` FROM `images-locaties` WHERE `location_id` = 2";
-        
-                // Execute the query using the database connection
-                $result = mysqli_query($this->DbConnect(), $query);
-        
-                // Loop through each row in the result set
-                while ($row = mysqli_fetch_array($result)) {
-                    // Get the image_id from the current row
-                    $imageId = $row['image_id'];
-        
-                    // Query to select the imagename associated with the retrieved image_id from the 'images' table
-                    $queryImg = "SELECT `imagename` FROM `images` WHERE `image_id` = $imageId";
-        
-                    // Execute the query to get the image details
-                    $resultImg = mysqli_query($this->DbConnect(), $queryImg);
-        
-                    // Loop through each row in the result set of the second query
-                    while ($rowImg = mysqli_fetch_array($resultImg)) {
-                        // Output the logo image using the imagename and the specified path
-                        echo '<img id="image-bottom" src="img/gallery/' . $rowImg["imagename"] . '" ><br>';
-                        }
-                    }
-        
-                    // Close the database connection
-                    $this->DbConnect()->close();
-                }
     
 }
 ?>
